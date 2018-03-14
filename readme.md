@@ -5,7 +5,7 @@ Là một hệ thống lưu thông tin các cá nhân thuộc một dòng họ
 - Giúp việc theo dõi, tìm kiếm thông tin về mọi người trong dòng họ dễ dàng hơn.
 - Biến thành gia phả số, tránh mai một thông tin theo thời gian.
 
-##Một số tính năng sẽ phát triển trong tương lai:
+## Một số tính năng sẽ phát triển trong tương lai:
 
 - Hiển thị thành biểu đồ dạng mind map.
 - Thêm được vợ/chồng (người không thuộc dòng họ).
