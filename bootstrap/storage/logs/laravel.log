@@ -1,0 +1,96 @@
+[2018-02-23 04:47:10] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:181)
+[stacktrace]
+#0 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(115): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(103): Illuminate\\Log\\LogManager->get(NULL)
+#2 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(491): Illuminate\\Log\\LogManager->driver()
+#3 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('The \"\" director...', Array)
+#4 /var/www/genealogy-2018/app/Exceptions/Handler.php(45): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(InvalidArgumentException))
+#5 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(314): Genealogy\\Exceptions\\Handler->report(Object(InvalidArgumentException))
+#6 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(118): Illuminate\\Foundation\\Http\\Kernel->reportException(Object(InvalidArgumentException))
+#7 /var/www/genealogy-2018/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#8 {main}
+"} 
+[2018-02-23 04:47:10] laravel.ERROR: The "" directory does not exist. {"exception":"[object] (InvalidArgumentException(code: 0): The \"\" directory does not exist. at /var/www/genealogy-2018/vendor/symfony/finder/Finder.php:539)
+[stacktrace]
+#0 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(87): Symfony\\Component\\Finder\\Finder->in(false)
+#1 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(64): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->getConfigurationFiles(Object(Illuminate\\Foundation\\Application))
+#2 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(39): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->loadConfigurationFiles(Object(Illuminate\\Foundation\\Application), Object(Illuminate\\Config\\Repository))
+#3 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(206): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->bootstrap(Object(Illuminate\\Foundation\\Application))
+#4 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(162): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#5 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(146): Illuminate\\Foundation\\Http\\Kernel->bootstrap()
+#6 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#7 /var/www/genealogy-2018/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#8 {main}
+"} 
+[2018-02-23 04:47:13] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:181)
+[stacktrace]
+#0 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(115): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(103): Illuminate\\Log\\LogManager->get(NULL)
+#2 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(491): Illuminate\\Log\\LogManager->driver()
+#3 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('The \"\" director...', Array)
+#4 /var/www/genealogy-2018/app/Exceptions/Handler.php(45): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(InvalidArgumentException))
+#5 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(314): Genealogy\\Exceptions\\Handler->report(Object(InvalidArgumentException))
+#6 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(118): Illuminate\\Foundation\\Http\\Kernel->reportException(Object(InvalidArgumentException))
+#7 /var/www/genealogy-2018/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#8 {main}
+"} 
+[2018-02-23 04:47:13] laravel.ERROR: The "" directory does not exist. {"exception":"[object] (InvalidArgumentException(code: 0): The \"\" directory does not exist. at /var/www/genealogy-2018/vendor/symfony/finder/Finder.php:539)
+[stacktrace]
+#0 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(87): Symfony\\Component\\Finder\\Finder->in(false)
+#1 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(64): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->getConfigurationFiles(Object(Illuminate\\Foundation\\Application))
+#2 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(39): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->loadConfigurationFiles(Object(Illuminate\\Foundation\\Application), Object(Illuminate\\Config\\Repository))
+#3 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(206): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->bootstrap(Object(Illuminate\\Foundation\\Application))
+#4 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(162): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#5 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(146): Illuminate\\Foundation\\Http\\Kernel->bootstrap()
+#6 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#7 /var/www/genealogy-2018/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#8 {main}
+"} 
+[2018-02-23 04:47:13] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:181)
+[stacktrace]
+#0 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(115): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(103): Illuminate\\Log\\LogManager->get(NULL)
+#2 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(491): Illuminate\\Log\\LogManager->driver()
+#3 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('The \"\" director...', Array)
+#4 /var/www/genealogy-2018/app/Exceptions/Handler.php(45): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(InvalidArgumentException))
+#5 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(314): Genealogy\\Exceptions\\Handler->report(Object(InvalidArgumentException))
+#6 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(118): Illuminate\\Foundation\\Http\\Kernel->reportException(Object(InvalidArgumentException))
+#7 /var/www/genealogy-2018/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#8 {main}
+"} 
+[2018-02-23 04:47:13] laravel.ERROR: The "" directory does not exist. {"exception":"[object] (InvalidArgumentException(code: 0): The \"\" directory does not exist. at /var/www/genealogy-2018/vendor/symfony/finder/Finder.php:539)
+[stacktrace]
+#0 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(87): Symfony\\Component\\Finder\\Finder->in(false)
+#1 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(64): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->getConfigurationFiles(Object(Illuminate\\Foundation\\Application))
+#2 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(39): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->loadConfigurationFiles(Object(Illuminate\\Foundation\\Application), Object(Illuminate\\Config\\Repository))
+#3 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(206): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->bootstrap(Object(Illuminate\\Foundation\\Application))
+#4 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(162): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#5 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(146): Illuminate\\Foundation\\Http\\Kernel->bootstrap()
+#6 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#7 /var/www/genealogy-2018/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#8 {main}
+"} 
+[2018-02-23 04:48:53] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:181)
+[stacktrace]
+#0 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(115): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(103): Illuminate\\Log\\LogManager->get(NULL)
+#2 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(491): Illuminate\\Log\\LogManager->driver()
+#3 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(114): Illuminate\\Log\\LogManager->error('The \"\" director...', Array)
+#4 /var/www/genealogy-2018/app/Exceptions/Handler.php(45): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(InvalidArgumentException))
+#5 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(314): Genealogy\\Exceptions\\Handler->report(Object(InvalidArgumentException))
+#6 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(118): Illuminate\\Foundation\\Http\\Kernel->reportException(Object(InvalidArgumentException))
+#7 /var/www/genealogy-2018/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#8 {main}
+"} 
+[2018-02-23 04:48:53] laravel.ERROR: The "" directory does not exist. {"exception":"[object] (InvalidArgumentException(code: 0): The \"\" directory does not exist. at /var/www/genealogy-2018/vendor/symfony/finder/Finder.php:539)
+[stacktrace]
+#0 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(87): Symfony\\Component\\Finder\\Finder->in(false)
+#1 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(64): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->getConfigurationFiles(Object(Illuminate\\Foundation\\Application))
+#2 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(39): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->loadConfigurationFiles(Object(Illuminate\\Foundation\\Application), Object(Illuminate\\Config\\Repository))
+#3 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(206): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->bootstrap(Object(Illuminate\\Foundation\\Application))
+#4 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(162): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#5 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(146): Illuminate\\Foundation\\Http\\Kernel->bootstrap()
+#6 /var/www/genealogy-2018/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#7 /var/www/genealogy-2018/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#8 {main}
+"} 

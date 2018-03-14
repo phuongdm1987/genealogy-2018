@@ -1,0 +1,40 @@
+<?php
+declare(strict_types=1);
+
+namespace Genealogy\Events;
+
+use Genealogy\Entities\User;
+use Illuminate\Queue\SerializesModels;
+use Illuminate\Broadcasting\PrivateChannel;
+use Illuminate\Foundation\Events\Dispatchable;
+use Illuminate\Broadcasting\InteractsWithSockets;
+
+/**
+ * Class RegisteredUser
+ * @package Genealogy\Events
+ */
+class RegisteredUser
+{
+    use Dispatchable, InteractsWithSockets, SerializesModels;
+    public $user;
+
+    /**
+     * Create a new event instance.
+     *
+     * @param User $user
+     */
+    public function __construct(User $user)
+    {
+        $this->user = $user;
+    }
+
+    /**
+     * Get the channels the event should broadcast on.
+     *
+     * @return \Illuminate\Broadcasting\Channel|array
+     */
+    public function broadcastOn()
+    {
+        return new PrivateChannel('channel-name');
+    }
+}
