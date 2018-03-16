@@ -9,6 +9,7 @@ window.$ = window.jQuery = require('jquery');
 window.go = require('gojs');
 require('./bootstrap');
 require('./main');
+require('./gojs');
 
 window.Vue = require('vue');
 
