@@ -10,6 +10,7 @@ use Genealogy\Http\Requests\UploadAvatarRequest;
 use Genealogy\Jobs\DeletePerson;
 use Genealogy\Jobs\UpdatePerson;
 use Genealogy\Jobs\UploadAvatarPerson;
+use Illuminate\Http\RedirectResponse;
 
 /**
  * Class PersonController
@@ -33,9 +34,9 @@ class PersonController extends Controller
     /**
      * @param PersonRequest $request
      * @param Person $person
-     * @return \Illuminate\Http\RedirectResponse
+     * @return RedirectResponse
      */
-    public function update(PersonRequest $request, Person $person): \Illuminate\Http\RedirectResponse
+    public function update(PersonRequest $request, Person $person): RedirectResponse
     {
         $this->dispatchNow(UpdatePerson::fromRequest($person, $request));
         $this->success('form.persons.updated');
@@ -46,9 +47,9 @@ class PersonController extends Controller
     /**
      * @param UploadAvatarRequest $request
      * @param Person $person
-     * @return \Illuminate\Http\RedirectResponse
+     * @return RedirectResponse
      */
-    public function uploadAvatar(UploadAvatarRequest $request, Person $person): \Illuminate\Http\RedirectResponse
+    public function uploadAvatar(UploadAvatarRequest $request, Person $person): RedirectResponse
     {
         $this->dispatchNow(UploadAvatarPerson::fromRequest($person, $request));
         $this->success('form.persons.uploaded');
@@ -58,10 +59,10 @@ class PersonController extends Controller
 
     /**
      * @param Person $person
-     * @return \Illuminate\Http\RedirectResponse
+     * @return RedirectResponse
      * @throws \Exception
      */
-    public function destroy(Person $person): \Illuminate\Http\RedirectResponse
+    public function destroy(Person $person): RedirectResponse
     {
         if ($this->dispatchNow(new DeletePerson($person))) {
             $this->success('form.persons.deleted');

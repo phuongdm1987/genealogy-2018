@@ -6,6 +6,7 @@ namespace Genealogy\Http\Controllers;
 use Genealogy\Entities\Biographical;
 use Genealogy\Http\Requests\BiographicalRequest;
 use Genealogy\Jobs\UpdateBiographical;
+use Illuminate\Http\RedirectResponse;
 
 /**
  * Class BiographicalController
@@ -16,9 +17,9 @@ class BiographicalController extends Controller
     /**
      * @param BiographicalRequest $request
      * @param Biographical $biographical
-     * @return \Illuminate\Http\RedirectResponse
+     * @return RedirectResponse
      */
-    public function update(BiographicalRequest $request, Biographical $biographical): \Illuminate\Http\RedirectResponse
+    public function update(BiographicalRequest $request, Biographical $biographical): RedirectResponse
     {
         $this->dispatchNow(UpdateBiographical::fromRequest($biographical, $request));
 

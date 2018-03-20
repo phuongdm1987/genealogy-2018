@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace Genealogy\Entities;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * Genealogy\Entities\Biographical
@@ -38,9 +39,9 @@ class Biographical extends Model
     protected $fillable = ['person_id', 'birth_place', 'company', 'career', 'school', 'subject', 'degree', 'hobbies'];
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      */
-    public function person(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    public function person(): BelongsTo
     {
         return $this->belongsTo(Person::class);
     }

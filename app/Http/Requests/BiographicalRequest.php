@@ -40,57 +40,57 @@ class BiographicalRequest extends FormRequest
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
-    public function birthPlace()
+    public function birthPlace(): ?string
     {
         return $this->get('birth_place');
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
-    public function company()
+    public function company(): ?string
     {
         return $this->get('company');
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
-    public function career()
+    public function career(): ?string
     {
         return $this->get('career');
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
-    public function school()
+    public function school(): ?string
     {
         return $this->get('school');
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
-    public function subject()
+    public function subject(): ?string
     {
         return $this->get('subject');
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
-    public function degree()
+    public function degree(): ?string
     {
         return $this->get('degree');
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
-    public function hobbies()
+    public function hobbies(): ?string
     {
         return $this->get('hobbies');
     }

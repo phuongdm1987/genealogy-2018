@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace Genealogy\Entities;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * Class Contact
@@ -35,9 +36,9 @@ class Contact extends Model
     protected $fillable = ['person_id', 'email', 'mobile', 'skype', 'facebook_url', 'address'];
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      */
-    public function person(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    public function person(): BelongsTo
     {
         return $this->belongsTo(Person::class);
     }

@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Genealogy\Entities;
 
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -61,9 +62,9 @@ class User extends Authenticatable
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return HasOne
      */
-    public function person(): \Illuminate\Database\Eloquent\Relations\HasOne
+    public function person(): HasOne
     {
         return $this->hasOne(Person::class);
     }

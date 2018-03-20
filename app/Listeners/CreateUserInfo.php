@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace Genealogy\Listeners;
 
-use Genealogy\Events\CreatedPerson;
 use Genealogy\Events\RegisteredUser;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\DispatchesJobs;

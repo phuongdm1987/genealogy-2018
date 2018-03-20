@@ -5,6 +5,7 @@ namespace Genealogy\Http\Controllers;
 
 use Genealogy\Entities\Person;
 use Genealogy\Jobs\CreateParent;
+use Illuminate\Http\RedirectResponse;
 
 /**
  * Class ParentController
@@ -14,9 +15,9 @@ class ParentController extends Controller
 {
     /**
      * @param Person $person
-     * @return \Illuminate\Http\RedirectResponse
+     * @return RedirectResponse
      */
-    public function create(Person $person): \Illuminate\Http\RedirectResponse
+    public function create(Person $person): RedirectResponse
     {
         $parent = $this->dispatchNow(CreateParent::fromRequest($person));
         $this->success('form.persons.created');

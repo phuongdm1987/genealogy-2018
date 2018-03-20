@@ -39,7 +39,7 @@ class CreatePerson implements ShouldQueue
         array $attributes = []
     ) {
         $this->user = $user;
-        $this->attributes = array_only($attributes, ['first_name', 'middle_name', 'last_name', 'avatar', 'sex', 'birth_of_date', 'is_living', 'death_of_date']);
+        $this->attributes = array_only($attributes, ['first_name', 'middle_name', 'last_name', 'sex', 'birth_of_date', 'is_living', 'death_of_date']);
     }
 
     /**
@@ -55,7 +55,6 @@ class CreatePerson implements ShouldQueue
                 'first_name' => $request->firstName(),
                 'middle_name' => $request->middleName(),
                 'last_name' => $request->lastName(),
-                'avatar' => $request->avatar(),
                 'sex' => $request->sex(),
                 'birth_of_date' => $request->birthOfDate(),
                 'is_living' => $request->isLiving(),

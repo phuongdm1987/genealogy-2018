@@ -40,39 +40,39 @@ class ContactRequest extends FormRequest
     /**
      * @return string
      */
-    public function email()
+    public function email(): string
     {
         return $this->get('email');
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
-    public function mobile()
+    public function mobile(): ?string
     {
         return $this->get('mobile');
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
-    public function skype()
+    public function skype(): ?string
     {
         return $this->get('skype');
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
-    public function facebookUrl()
+    public function facebookUrl(): ?string
     {
         return $this->get('facebook_url');
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
-    public function address()
+    public function address(): ?string
     {
         return $this->get('address');
     }

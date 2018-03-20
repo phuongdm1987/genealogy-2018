@@ -6,6 +6,7 @@ namespace Genealogy\Http\Controllers;
 use Genealogy\Entities\Contact;
 use Genealogy\Http\Requests\ContactRequest;
 use Genealogy\Jobs\UpdateContact;
+use Illuminate\Http\RedirectResponse;
 
 /**
  * Class ContactController
@@ -16,9 +17,9 @@ class ContactController extends Controller
     /**
      * @param ContactRequest $request
      * @param Contact $contact
-     * @return \Illuminate\Http\RedirectResponse
+     * @return RedirectResponse
      */
-    public function update(ContactRequest $request, Contact $contact): \Illuminate\Http\RedirectResponse
+    public function update(ContactRequest $request, Contact $contact): RedirectResponse
     {
         $this->dispatchNow(UpdateContact::fromRequest($contact, $request));
         $this->success('form.contacts.updated');
