@@ -6,6 +6,7 @@ namespace Genealogy\Http\Controllers;
 use Genealogy\Entities\Person;
 use Genealogy\Entities\User;
 use Genealogy\Helpers\GenerateTree;
+use Illuminate\View\View;
 
 /**
  * Class HomeController
@@ -16,11 +17,9 @@ class HomeController extends Controller
     use GenerateTree;
 
     /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\View\View
+     * @return View
      */
-    public function index(): \Illuminate\View\View
+    public function index(): View
     {
         $person = \Auth::user()->person;
         $personTree = $this->generateTreeMap(Person::all()->toTree(), $person);

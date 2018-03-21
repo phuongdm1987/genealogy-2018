@@ -45,25 +45,25 @@ class PersonRequest extends FormRequest
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
-    public function firstName()
+    public function firstName(): ?string
     {
         return $this->get('first_name');
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
-    public function middleName()
+    public function middleName(): ?string
     {
         return $this->get('middle_name');
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
-    public function lastName()
+    public function lastName(): ?string
     {
         return $this->get('last_name');
     }
@@ -77,9 +77,9 @@ class PersonRequest extends FormRequest
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
-    public function birthOfDate()
+    public function birthOfDate(): ?string
     {
         $birthOfDate = $this->get('birth_of_date');
         if (!$birthOfDate) {
@@ -102,9 +102,9 @@ class PersonRequest extends FormRequest
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
-    public function deathOfDate()
+    public function deathOfDate(): ?string
     {
         if ($this->isLiving()) {
             return null;

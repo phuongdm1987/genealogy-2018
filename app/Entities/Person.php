@@ -4,6 +4,8 @@ declare(strict_types=1);
 namespace Genealogy\Entities;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Kalnoy\Nestedset\NodeTrait;
 
 /**
@@ -133,25 +135,25 @@ class Person extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      */
-    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return HasOne
      */
-    public function contact(): \Illuminate\Database\Eloquent\Relations\HasOne
+    public function contact(): HasOne
     {
         return $this->hasOne(Contact::class);
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return HasOne
      */
-    public function biographical(): \Illuminate\Database\Eloquent\Relations\HasOne
+    public function biographical(): HasOne
     {
         return $this->hasOne(Biographical::class);
     }
