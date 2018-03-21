@@ -14,12 +14,12 @@ trait GenerateTree
 {
     /**
      * @param Collection $nodes
-     * @param Person $currentPerson
+     * @param Person|null $currentPerson
      * @param string $html
      * @param bool $addRow
      * @return string
      */
-    protected function generateTreeMap(Collection $nodes, Person $currentPerson, &$html = '', $addRow = false): string
+    protected function generateTreeMap(Collection $nodes, Person $currentPerson = null, &$html = '', $addRow = false): string
     {
         if ($nodes->isEmpty()) {
             return $html;
@@ -29,7 +29,7 @@ trait GenerateTree
             $html .= '<div class="container-fluid ml-sm-3"><div class="row">';
         }
         foreach ($nodes as $person) {
-            $classborder = $currentPerson->id === $person->id ? ' border-primary' : '';
+            $classborder = $currentPerson && $currentPerson->id === $person->id ? ' border-primary' : '';
             $classLink = $person->isDead() ? ' text-secondary' : '';
 
             $html .= '<div class="col mb-sm-3">

@@ -6,25 +6,19 @@
 
 <style>
     .node circle {
-        fill: #999;
+        cursor: pointer;
+        fill: #fff;
+        stroke: steelblue;
+        stroke-width: 1.5px;
     }
 
     .node text {
-        font: 10px sans-serif;
+        font-size: 11px;
     }
 
-    .node--internal circle {
-        fill: #555;
-    }
-
-    .node--internal text {
-        text-shadow: 0 1px 0 #fff, 0 -1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff;
-    }
-
-    .link {
+    path.link {
         fill: none;
-        stroke: #555;
-        stroke-opacity: 0.4;
+        stroke: #ccc;
         stroke-width: 1.5px;
     }
 

@@ -130,7 +130,7 @@ d3.json('http://genealogy.test:81/maps', function(error, json) {
             .attr("dy", 3)
             .style("text-anchor", "middle")
             .text(function(d) {
-                return d.data.name
+                return d.data.last_name
             });
     }
 });

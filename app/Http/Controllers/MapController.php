@@ -12,6 +12,7 @@ use Genealogy\Http\Transformers\PersonTransformer;
  */
 class MapController extends Controller
 {
+
     /**
      * MapController constructor.
      * @param PersonTransformer $transformer
@@ -26,68 +27,53 @@ class MapController extends Controller
      */
     public function index()
     {
-        $personDataTransform = $this->transform(Person::all()->sortKeys());
+        $personTree = Person::all()->toTree();
 
-        if (empty($personDataTransform)) {
-            $personDataTransform = [
-                [
-                    'key' => 0,
-                    'text' => 'Me',
-                    'loc' => '0 0',
-                ],
-            ];
-        }
-
-        $personDataTransform = [
-            'name' => 'Root',
-            'children' => [
-                [
-                    'name' => 'Branch 1',
-                ],
-                [
-                    'name' => 'Branch 2',
-                    'children' => [
-                        [
-                            'name' => 'Branch 2.1',
-                        ],
-                        [
-                            'name' => 'Branch 2.2',
-                            'children' => [
-                                [
-                                    'name' => 'Branch 2.2.1',
-                                ],
-                                [
-                                    'name' => 'Branch 2.2.2',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'Branch 3',
-                ],
-                [
-                    'name' => 'Branch 4',
-                    'children' => [
-                        [
-                            'name' => 'Branch 4.1',
-                        ],
-                        [
-                            'name' => 'Branch 4.2',
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'Branch 5',
-                ],
-            ],
-        ];
-
-//        $datas = [
-//            'class' => 'go.TreeModel',
-//            'nodeDataArray' => $personDataTransform,
+//        $personDataTransform = [
+//            'name' => 'Root',
+//            'children' => [
+//                [
+//                    'name' => 'Branch 1',
+//                ],
+//                [
+//                    'name' => 'Branch 2',
+//                    'children' => [
+//                        [
+//                            'name' => 'Branch 2.1',
+//                        ],
+//                        [
+//                            'name' => 'Branch 2.2',
+//                            'children' => [
+//                                [
+//                                    'name' => 'Branch 2.2.1',
+//                                ],
+//                                [
+//                                    'name' => 'Branch 2.2.2',
+//                                ],
+//                            ],
+//                        ],
+//                    ],
+//                ],
+//                [
+//                    'name' => 'Branch 3',
+//                ],
+//                [
+//                    'name' => 'Branch 4',
+//                    'children' => [
+//                        [
+//                            'name' => 'Branch 4.1',
+//                        ],
+//                        [
+//                            'name' => 'Branch 4.2',
+//                        ],
+//                    ],
+//                ],
+//                [
+//                    'name' => 'Branch 5',
+//                ],
+//            ],
 //        ];
 
-        return response()->json($personDataTransform);
+        return response()->json(array_first($personTree));
     }
 }
