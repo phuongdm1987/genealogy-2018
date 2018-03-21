@@ -28,7 +28,7 @@ class PersonTransformer extends TransformerAbstract
         ];
 
         if ($person->parent_id <= 0) {
-            unset($data['parent']);
+            unset($data['parent'], $data['brush'], $data['dir']);
         }
 
         return $data;

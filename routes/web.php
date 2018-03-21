@@ -15,15 +15,15 @@ declare(strict_types=1);
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/maps', 'MapController@index')->name('maps.index');
+Route::get('/test', function () {
+    return view('test');
+});
 
 Auth::routes();
-Route::get('/maps', 'MapController@index')->name('maps.index');
 
 Route::middleware('auth')->group(function () {
     Route::get('/home', 'HomeController@index')->name('home');
-    Route::get('/test', function () {
-        return view('test');
-    });
 
     Route::resource('/persons', 'PersonController');
     Route::put('/persons/{person}/upload-avatar', 'PersonController@uploadAvatar')->name('persons.upload.avatar');

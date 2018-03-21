@@ -6,10 +6,11 @@
  */
 window.$ = window.jQuery = require('jquery');
 
-window.go = require('gojs');
+import * as d3 from "d3";
+window.d3 = d3;
 require('./bootstrap');
 require('./main');
-require('./gojs');
+require('./d3js');
 
 window.Vue = require('vue');
 
