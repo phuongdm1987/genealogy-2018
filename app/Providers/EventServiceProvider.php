@@ -4,6 +4,10 @@ declare(strict_types=1);
 namespace Genealogy\Providers;
 
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
+use Genealogy\Events\RegisteredUser;
+use Genealogy\Listeners\CreateUserInfo;
+use Genealogy\Events\CreatedPerson;
+use Genealogy\Listeners\CreatePersonInfo;
 
 /**
  * Class EventServiceProvider
@@ -17,11 +21,11 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'Genealogy\Events\RegisteredUser' => [
-            'Genealogy\Listeners\CreateUserInfo',
+        RegisteredUser::class => [
+            CreateUserInfo::class,
         ],
-        'Genealogy\Events\CreatedPerson' => [
-            'Genealogy\Listeners\CreatePersonInfo',
+        CreatedPerson::class => [
+            CreatePersonInfo::class,
         ],
     ];
 

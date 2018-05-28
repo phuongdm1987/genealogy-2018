@@ -27,53 +27,10 @@ class MapController extends Controller
      */
     public function index()
     {
-        $personTree = Person::all()->toTree();
+        $personDataTransform = $this->transform(Person::all());
 
-//        $personDataTransform = [
-//            'name' => 'Root',
-//            'children' => [
-//                [
-//                    'name' => 'Branch 1',
-//                ],
-//                [
-//                    'name' => 'Branch 2',
-//                    'children' => [
-//                        [
-//                            'name' => 'Branch 2.1',
-//                        ],
-//                        [
-//                            'name' => 'Branch 2.2',
-//                            'children' => [
-//                                [
-//                                    'name' => 'Branch 2.2.1',
-//                                ],
-//                                [
-//                                    'name' => 'Branch 2.2.2',
-//                                ],
-//                            ],
-//                        ],
-//                    ],
-//                ],
-//                [
-//                    'name' => 'Branch 3',
-//                ],
-//                [
-//                    'name' => 'Branch 4',
-//                    'children' => [
-//                        [
-//                            'name' => 'Branch 4.1',
-//                        ],
-//                        [
-//                            'name' => 'Branch 4.2',
-//                        ],
-//                    ],
-//                ],
-//                [
-//                    'name' => 'Branch 5',
-//                ],
-//            ],
-//        ];
+//        $personTree = Person::all()->toTree();
 
-        return response()->json(array_first($personTree));
+        return response()->json($personDataTransform);
     }
 }

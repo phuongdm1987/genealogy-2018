@@ -69,6 +69,14 @@ class Person extends Model
     /**
      * @return string
      */
+    public function getFullNameAttribute(): string
+    {
+        return $this->getFullName();
+    }
+
+    /**
+     * @return string
+     */
     public function getAvatar(): string
     {
         if (!$this->avatar) {

@@ -1,24 +1,30 @@
 @extends('layouts.app')
 
 @section('content')
-    <svg width="1000" height="600"></svg>
+    <svg width="960" height="1000"></svg>
 @endsection
 
 <style>
     .node circle {
-        cursor: pointer;
-        fill: #fff;
-        stroke: steelblue;
-        stroke-width: 1.5px;
+        fill: #999;
     }
 
     .node text {
-        font-size: 11px;
+        font: 10px sans-serif;
     }
 
-    path.link {
+    .node--internal circle {
+        fill: #555;
+    }
+
+    .node--internal text {
+        text-shadow: 0 1px 0 #fff, 0 -1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff;
+    }
+
+    .link {
         fill: none;
-        stroke: #ccc;
+        stroke: #555;
+        stroke-opacity: 0.4;
         stroke-width: 1.5px;
     }
 

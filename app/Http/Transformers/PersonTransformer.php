@@ -19,17 +19,10 @@ class PersonTransformer extends TransformerAbstract
     public function transform(Person $person): array
     {
         $data = [
-            'key'    => (int) $person->id,
-            'parent' => (int) $person->parent_id,
-            'text'   => $person->getFullName(),
-            'loc'   => "{$person->id} {$person->id}",
-            'brush' => 'skyblue',
-            'dir' => 'right'
+            'id'    => (int) $person->id,
+            'parent_id' => (int) $person->parent_id,
+            'full_name'   => $person->getFullName(),
         ];
-
-        if ($person->parent_id <= 0) {
-            unset($data['parent'], $data['brush'], $data['dir']);
-        }
 
         return $data;
     }
