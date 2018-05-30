@@ -27,10 +27,8 @@ class MapController extends Controller
      */
     public function index()
     {
-        $personDataTransform = $this->transform(Person::all());
+        $personTree = Person::all()->toTree()->first();
 
-//        $personTree = Person::all()->toTree();
-
-        return response()->json($personDataTransform);
+        return response()->json($personTree);
     }
 }

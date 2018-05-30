@@ -4,7 +4,6 @@ declare(strict_types=1);
 namespace Genealogy\Http\Controllers;
 
 use Genealogy\Entities\Person;
-use Genealogy\Entities\User;
 use Genealogy\Helpers\GenerateTree;
 use Illuminate\View\View;
 

@@ -66,6 +66,7 @@ class Person extends Model
 
     protected $fillable = ['user_id', 'parent_id', '_lft', '_rgt', 'first_name', 'middle_name', 'last_name', 'avatar', 'sex', 'birth_of_date', 'is_living', 'death_of_date'];
 
+    protected $appends = ['full_name'];
     /**
      * @return string
      */

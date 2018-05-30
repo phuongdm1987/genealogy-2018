@@ -20,7 +20,7 @@ class PersonTransformer extends TransformerAbstract
     {
         $data = [
             'id'    => (int) $person->id,
-            'parent_id' => (int) $person->parent_id,
+            'parent_id' => $person->parent_id <= 0 ? null : $person->parent_id,
             'full_name'   => $person->getFullName(),
         ];
 

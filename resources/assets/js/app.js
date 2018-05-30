@@ -10,7 +10,7 @@ import * as d3 from "d3";
 window.d3 = d3;
 require('./bootstrap');
 require('./main');
-require('./d3js');
+// require('./d3js');
 
 window.Vue = require('vue');
 
@@ -20,7 +20,7 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('tree-map', require('./components/Tree.vue'));
 
 const app = new Vue({
     el: '#app'
