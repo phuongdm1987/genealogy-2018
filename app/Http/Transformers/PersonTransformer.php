@@ -28,6 +28,7 @@ class PersonTransformer extends TransformerAbstract
             'parent_id' => $person->parent_id <= 0 ? null : $person->parent_id,
             'full_name' => $person->getFullName(),
             'avatar_path' => $person->getAvatar(),
+            'sex' => (int) $person->sex,
             'sex_txt' => $person->sex_txt,
             'bod' => $person->bod,
             'dod' => $person->dod,

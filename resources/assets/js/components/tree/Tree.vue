@@ -18,11 +18,11 @@
                             <a class="flex-sm-fill text-sm-center nav-link" id="profile-tab" data-toggle="tab" href="#biographical" role="tab" aria-controls="biographical" aria-selected="false">Biographical</a>
                         </nav>
                         <div class="tab-content mt-3" id="myTabContent">
+                            <div class="text-center">
+                                <img v-if="currentNode.data.avatar_path" :src="currentNode.data.avatar_path" :alt="currentNode.data.full_name" class="img-thumbnail">
+                            </div>
                             <div class="tab-pane fade show active" id="detail" role="tabpanel" aria-labelledby="detail-tab">
                                 <form>
-                                    <div class="text-center">
-                                        <img v-if="currentNode.data.avatar_path" :src="currentNode.data.avatar_path" :alt="currentNode.data.full_name" class="img-thumbnail">
-                                    </div>
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label text-right">Sex:</label>
                                         <div class="col-sm-9">
@@ -220,7 +220,6 @@
             },
             onEvent (eventName, data) {
                 this.events.push({eventName, data: data.data});
-                console.log({eventName, data: data})
             },
             resetZoom () {
                 this.isLoading = true;

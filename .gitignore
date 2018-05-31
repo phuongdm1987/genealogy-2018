@@ -17,3 +17,5 @@ _ide_helper.php
 composer.lock
 public/js/app.js
 yarn.lock
+/public/js/app.js
+/public/css/app.css

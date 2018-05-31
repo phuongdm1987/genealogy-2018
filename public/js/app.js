@@ -70641,7 +70641,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         onEvent: function onEvent(eventName, data) {
             this.events.push({ eventName: eventName, data: data.data });
-            console.log({ eventName: eventName, data: data });
         },
         resetZoom: function resetZoom() {
             var _this4 = this;
@@ -71404,6 +71403,18 @@ var render = function() {
                           attrs: { id: "myTabContent" }
                         },
                         [
+                          _c("div", { staticClass: "text-center" }, [
+                            _vm.currentNode.data.avatar_path
+                              ? _c("img", {
+                                  staticClass: "img-thumbnail",
+                                  attrs: {
+                                    src: _vm.currentNode.data.avatar_path,
+                                    alt: _vm.currentNode.data.full_name
+                                  }
+                                })
+                              : _vm._e()
+                          ]),
+                          _vm._v(" "),
                           _c(
                             "div",
                             {
@@ -71416,18 +71427,6 @@ var render = function() {
                             },
                             [
                               _c("form", [
-                                _c("div", { staticClass: "text-center" }, [
-                                  _vm.currentNode.data.avatar_path
-                                    ? _c("img", {
-                                        staticClass: "img-thumbnail",
-                                        attrs: {
-                                          src: _vm.currentNode.data.avatar_path,
-                                          alt: _vm.currentNode.data.full_name
-                                        }
-                                      })
-                                    : _vm._e()
-                                ]),
-                                _vm._v(" "),
                                 _c("div", { staticClass: "form-group row" }, [
                                   _c(
                                     "label",
