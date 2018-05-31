@@ -1,8 +1,6 @@
 <?php
 declare(strict_types=1);
 
-use Illuminate\Http\Request;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,6 +12,7 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware('auth:api')->namespace('Api')->group(function () {
+    Route::resource('/persons', 'PersonController');
+    Route::get('/maps', 'MapController@index');
 });

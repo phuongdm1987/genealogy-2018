@@ -21,7 +21,7 @@
     },
     "dependencies": {
         "d3": "^4.13.0",
-        "material-design-icons": "^3.0.1",
+        "font-awesome": "^4.7.0",
         "vued3tree": "^3.5.0"
     }
 }

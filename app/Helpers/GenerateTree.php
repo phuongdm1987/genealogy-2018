@@ -38,7 +38,7 @@ trait GenerateTree
                             <div class="clearfix mb-sm-1">';
 
             if ($person->avatar) {
-                $html .= '<img src="' . $person->getAvatar() . '" alt="' . $person->last_name . '" class="img-thumbnail float-left mr-sm-2" width="50" height="50">';
+                $html .= '<img src="' . $person->getAvatar() . '" alt="' . $person->getFullName() . '" class="img-thumbnail float-left mr-sm-2" width="50" height="50">';
             }
 
             $html .= '<ul class="content float-left list-unstyled mb-0">

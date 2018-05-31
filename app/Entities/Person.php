@@ -66,7 +66,7 @@ class Person extends Model
 
     protected $fillable = ['user_id', 'parent_id', '_lft', '_rgt', 'first_name', 'middle_name', 'last_name', 'avatar', 'sex', 'birth_of_date', 'is_living', 'death_of_date'];
 
-    protected $appends = ['full_name'];
+    protected $appends = ['full_name', 'avatar_path', 'sex_txt', 'bod', 'dod'];
     /**
      * @return string
      */
@@ -78,13 +78,45 @@ class Person extends Model
     /**
      * @return string
      */
+    public function getAvatarPathAttribute(): string
+    {
+        return $this->getAvatar();
+    }
+
+    /**
+     * @return string
+     */
+    public function getSexTxtAttribute(): string
+    {
+        return self::SEX[$this->sex] ?? 'N/a';
+    }
+
+    /**
+     * @return string
+     */
+    public function getBodAttribute(): string
+    {
+        return $this->getBirthOfDate();
+    }
+
+    /**
+     * @return string
+     */
+    public function getDodAttribute(): string
+    {
+        return $this->getDeathOfDate();
+    }
+
+    /**
+     * @return string
+     */
     public function getAvatar(): string
     {
         if (!$this->avatar) {
             return '';
         }
 
-        return '/storage/images/' . $this->avatar;
+        return asset('/storage/images/' . $this->avatar);
     }
 
     /**
