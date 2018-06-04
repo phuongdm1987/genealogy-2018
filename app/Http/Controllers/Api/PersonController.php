@@ -4,15 +4,16 @@ declare(strict_types=1);
 namespace Genealogy\Http\Controllers\Api;
 
 use Genealogy\Entities\Person;
-use Genealogy\Http\Controllers\Controller;
+use Genealogy\Http\Requests\PersonRequest;
 use Genealogy\Http\Transformers\PersonTransformer;
-use Illuminate\Http\Request;
+use Genealogy\Jobs\UpdatePerson;
+use Illuminate\Http\JsonResponse;
 
 /**
  * Class PersonController
  * @package Genealogy\Http\Controllers\Api
  */
-class PersonController extends Controller
+class PersonController extends ApiController
 {
 
     /**
@@ -26,12 +27,30 @@ class PersonController extends Controller
 
     /**
      * @param Person $person
-     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     * @return JsonResponse
      */
-    public function show(Person $person)
+    public function show(Person $person): JsonResponse
     {
-        $personTransform = $this->transform($person);
+        return $this->successResponse($person);
+    }
 
-        return response()->json($personTransform);
+    /**
+     * @param PersonRequest $request
+     * @param Person $person
+     * @return JsonResponse
+     */
+    public function update(PersonRequest $request, Person $person): JsonResponse
+    {
+        $person = $this->dispatchNow(UpdatePerson::fromRequest($person, $request));
+
+        return $this->successResponse($person);
+    }
+
+    /**
+     * @return JsonResponse
+     */
+    public function getSexes(): JsonResponse
+    {
+        return $this->successResponse(Person::SEX, false);
     }
 }

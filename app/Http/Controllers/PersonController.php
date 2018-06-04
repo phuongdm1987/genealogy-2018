@@ -11,6 +11,7 @@ use Genealogy\Jobs\DeletePerson;
 use Genealogy\Jobs\UpdatePerson;
 use Genealogy\Jobs\UploadAvatarPerson;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\View\View;
 
 /**
  * Class PersonController
@@ -21,6 +22,17 @@ class PersonController extends Controller
     use GenerateTree;
 
     /**
+     * @return View
+     */
+    public function index(): View
+    {
+        $person = \Auth::user()->person;
+        $personTree = $this->generateTreeMap(Person::all()->toTree(), $person);
+
+        return view('person', compact('person', 'personTree'));
+    }
+
+    /**
      * @param Person $person
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -28,7 +40,7 @@ class PersonController extends Controller
     {
         $personTree = $this->generateTreeMap(Person::all()->toTree(), $person);
 
-        return view('home', compact('person', 'personTree'));
+        return view('person', compact('person', 'personTree'));
     }
 
     /**

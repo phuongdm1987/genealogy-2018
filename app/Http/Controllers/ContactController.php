@@ -24,6 +24,6 @@ class ContactController extends Controller
         $this->dispatchNow(UpdateContact::fromRequest($contact, $request));
         $this->success('form.contacts.updated');
 
-        return redirect()->route('home');
+        return redirect()->route('persons.show', $contact->person_id);
     }
 }

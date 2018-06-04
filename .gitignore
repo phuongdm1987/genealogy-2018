@@ -15,7 +15,5 @@ yarn.lock
 _ide_helper.php
 .phpstorm.meta.php
 composer.lock
-public/js/app.js
-yarn.lock
 /public/js/app.js
 /public/css/app.css

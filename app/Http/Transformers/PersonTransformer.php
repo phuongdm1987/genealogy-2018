@@ -26,12 +26,19 @@ class PersonTransformer extends TransformerAbstract
         $data = [
             'id' => (int) $person->id,
             'parent_id' => $person->parent_id <= 0 ? null : $person->parent_id,
+            'first_name' => $person->first_name,
+            'middle_name' => $person->middle_name,
+            'last_name' => $person->last_name,
             'full_name' => $person->getFullName(),
+            'avatar' => $person->avatar,
             'avatar_path' => $person->getAvatar(),
             'sex' => (int) $person->sex,
             'sex_txt' => $person->sex_txt,
-            'bod' => $person->bod,
-            'dod' => $person->dod,
+            'birth_of_date' => $person->getBirthOfDate(),
+            'birth_of_time' => $person->getBirthOfTime(),
+            'is_living' => $person->is_living,
+            'death_of_date' => $person->getDeathOfDate(),
+            'death_of_time' => $person->getDeathOfTime(),
         ];
 
         return $data;

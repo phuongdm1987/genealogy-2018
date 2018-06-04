@@ -4,7 +4,9 @@ declare(strict_types=1);
 namespace Genealogy\Exceptions;
 
 use Exception;
+use Genealogy\Helpers\JsonResponseHandler;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 /**
  * Class Handler
@@ -12,6 +14,8 @@ use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
  */
 class Handler extends ExceptionHandler
 {
+    use JsonResponseHandler;
+
     /**
      * A list of the exception types that are not reported.
      *
@@ -48,10 +52,20 @@ class Handler extends ExceptionHandler
     /**
      * @param \Illuminate\Http\Request $request
      * @param Exception $exception
-     * @return \Symfony\Component\HttpFoundation\Response
+     * @return \Illuminate\Http\JsonResponse|\Symfony\Component\HttpFoundation\Response
      */
     public function render($request, Exception $exception)
     {
-        return parent::render($request, $exception);
+        if (!$request->expectsJson()) {
+
+            return parent::render($request, $exception);
+        }
+
+        switch ($exception) {
+            case ($exception instanceof NotFoundHttpException):
+                return $this->notFoundResponse();
+            default:
+                return parent::render($request, $exception);
+        }
     }
 }

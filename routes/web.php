@@ -11,18 +11,16 @@ declare(strict_types=1);
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/test', function () {
-    return view('test');
+    return view('home');
 });
 
 Auth::routes();
 
 Route::middleware('auth')->group(function () {
-    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/tree-map', function () {
+        return view('tree_map');
+    })->name('tree-map');
 
     Route::resource('/persons', 'PersonController');
     Route::put('/persons/{person}/upload-avatar', 'PersonController@uploadAvatar')->name('persons.upload.avatar');

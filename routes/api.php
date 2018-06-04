@@ -13,6 +13,7 @@ declare(strict_types=1);
 */
 
 Route::middleware('auth:api')->namespace('Api')->group(function () {
+    Route::get('/persons/sexes', 'PersonController@getSexes');
     Route::resource('/persons', 'PersonController');
     Route::get('/maps', 'MapController@index');
 });

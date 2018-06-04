@@ -34,7 +34,6 @@ class PersonRequest extends FormRequest
             'first_name' => 'nullable|string|max:50',
             'middle_name' => 'nullable|string|max:50',
             'last_name' => 'nullable|string|max:50',
-            'avatar' => 'nullable|image|max:255',
             'sex' => ['integer', Rule::in(array_keys(Person::SEX))],
             'birth_of_date' => 'nullable|date_format:Y-m-d',
             'birth_of_time' => 'nullable|date_format:H:i',
@@ -88,7 +87,7 @@ class PersonRequest extends FormRequest
 
         $birthOfTime = $this->get('birth_of_time') ?? '00:00';
         $birthOfTime .= ':00';
-        $birthOfDate .= $birthOfTime;
+        $birthOfDate .= ' ' . $birthOfTime;
 
         return $birthOfDate;
     }

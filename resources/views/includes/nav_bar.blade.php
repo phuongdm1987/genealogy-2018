@@ -10,7 +10,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
-
+                @auth
+                    <li class="{{ request()->routeIs('tree-map') ? 'active' : '' }}"><a href="{{ route('tree-map') }}" class="nav-link">Tree map</a></li>
+                    <li class="{{ request()->routeIs('persons.index') ? 'active' : '' }}"><a href="{{ route('persons.index') }}" class="nav-link">Persons</a></li>
+                @endauth
             </ul>
 
             <!-- Right Side Of Navbar -->

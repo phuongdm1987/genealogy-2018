@@ -30,9 +30,9 @@ class ContactRequest extends FormRequest
     {
         return [
             'email' => 'nullable|email|max:255',
-            'mobile' => 'nullable|string|max:50',
-            'skype' => 'nullable|string|max:50',
-            'facebook_url' => 'nullable|string|max:255',
+            'mobile' => 'nullable|digits_between:6,11',
+            'skype' => 'nullable|alpha_num|max:50',
+            'facebook_url' => 'nullable|url|max:255',
             'address' => 'nullable|string|max:1000',
         ];
     }
