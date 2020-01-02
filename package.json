@@ -23,6 +23,7 @@
         "d3": "^4.13.0",
         "font-awesome": "^4.7.0",
         "vee-validate": "^2.0.9",
-        "vued3tree": "^3.5.0"
+        "vued3tree": "^3.5.0",
+        "vuex": "^3.0.1"
     }
 }

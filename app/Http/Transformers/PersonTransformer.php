@@ -14,7 +14,8 @@ class PersonTransformer extends TransformerAbstract
 {
     protected $availableIncludes = [
         'contact',
-        'biographical'
+        'biographical',
+        'children',
     ];
 
     /**
@@ -64,5 +65,16 @@ class PersonTransformer extends TransformerAbstract
         $biographical = $person->biographical;
 
         return $this->item($biographical, new BiographicalTransformer);
+    }
+
+    /**
+     * @param Person $person
+     * @return \League\Fractal\Resource\Collection
+     */
+    public function includeChildren(Person $person): \League\Fractal\Resource\Collection
+    {
+        $children = $person->children;
+
+        return $this->collection($children, new self);
     }
 }

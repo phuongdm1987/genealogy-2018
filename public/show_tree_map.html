@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Family Tree</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <style>
+        rect {
+            fill: white;
+            stroke: silver;
+            stroke-width: 2;
+        }
+        path {
+            fill: none;
+            stroke: silver;
+            stroke-width: 2;
+        }
+        text {
+            dominant-baseline: middle;
+            text-anchor: middle;
+            font-size: 16px;
+        }
+        .hide {
+            visibility: hidden;
+        }
+        #details {
+            position: absolute;
+            left: 320px;
+            top: 120px;
+            width: 200px;
+            height: 30px;
+            background: gray;
+            color: white;
+            visibility: hidden;
+            border-radius: 15px;
+            text-align: center;
+            padding: 15px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="details"></div>
+<script>
+    function getMeta(url){
+        var img = new Image();
+        img.src = url;
+        return img;
+    }
+
+    var svg = d3.select('body').append('svg')
+        .attr('width', 1500)
+        .attr('height', 800)
+        .append('g').attr('transform', 'translate(50,50)');
+
+    var data = [
+        {'child': 'Root', 'parent': ''},
+        {'child': 'Join', 'parent': 'Root', 'spouse': 'Eva'},
+        {'child': 'Eva', 'parent': 'Root', 'isSpouse': true},
+        {'child': 'Mark', 'parent': 'Ann', 'spouse': 'Jessica'},
+        {'child': 'Aaron', 'parent': 'Kevin', 'spouse': 'Anna'},
+        {'child': 'Anna', 'parent': 'Kevin', 'isSpouse': true},
+        {'child': 'Kevin', 'parent': 'Join'},
+        {'child': 'Hannah', 'parent': 'Ann'},
+        {'child': 'Kenny', 'parent': 'Ann'},
+        {'child': 'Rose', 'parent': 'Sarah'},
+        {'child': 'Ann', 'parent': 'Join'},
+        {'child': 'Sarah', 'parent': 'Kevin'},
+        {'child': 'Angel', 'parent': 'Sarah'},
+        {'child': 'Henry', 'parent': 'Angel'},
+    ];
+
+    var dataStructure = d3.stratify()
+        .id(function(d){return d.child;})
+        .parentId(function(d){return d.parent;})
+        (data);
+
+    var treeStructure = d3.tree().size([900,600]);
+    var information = treeStructure(dataStructure);
+    console.log(information.descendants());
+    console.log(information.links());
+
+    var connections = svg.append('g').selectAll('path')
+        .data(information.links());
+    connections.enter().append('path')
+        .attr('d', function(d){
+            if (d.target.data.isSpouse) {
+                return;
+            }
+            return 'M' + d.source.x + ',' + d.source.y + ' v 50 H' +
+                d.target.x + ' V' + d.target.y;
+        });
+
+    var marriageLinks = [];
+
+    data.forEach(function(d){
+        if(d.spouse != undefined) {
+            var target = data.find(item => item.child === d.spouse);
+
+            if (target != undefined) {
+                marriageLinks.push(
+                    {'source': {'id': d.child}, 'target': {'id': target.child}}
+                )
+            }
+        }
+    })
+    console.log(marriageLinks);
+
+    var rectangles = svg.append('g').selectAll('rect')
+        .data(information.descendants());
+    rectangles.enter().append('rect')
+        .attr('x', function(d){return d.x-(d.data.child.length * 15)/2})
+        .attr('y', function(d){return d.y-20;})
+        .attr('width', function(d){return d.data.child.length * 15 + 'px'})
+        .attr('height', '40px')
+        .on('mouseover', function(d){
+            d3.select('#details').style('visibility', 'visible')
+                .html(function(){
+                    if(d.data.spouse != undefined) {
+                        return 'Spouse: ' + d.data.spouse;
+                    } else {
+                        return 'No Spouse';
+                    }
+                });
+        })
+        .on('mouseleave', function(d){
+            d3.select('#details').style('visibility', 'hidden');
+        });
+
+    // var images = svg.append('g').selectAll('image')
+    //     .data(information.descendants());
+    // images.enter()
+    //     .append('image')
+    //     .attr('x', function(d){
+    //         var image = getMeta("https://www.freeiconspng.com/uploads/flat-blue-home-icon-4.png");
+    //         return d.x-(20/2);
+    //     })
+    //     .attr('y', function(d){
+    //         var image = getMeta("https://www.freeiconspng.com/uploads/flat-blue-home-icon-4.png");
+    //         return d.y-(20/2);
+    //     })
+    //     .attr('width', '20px')
+    //     .attr("xlink:href", "https://www.freeiconspng.com/uploads/flat-blue-home-icon-4.png");
+
+    var names = svg.append('g').selectAll('text')
+        .data(information.descendants());
+    names.enter()
+        .append('text')
+        .text(function(d){return d.data.child;})
+        .attr('x', function(d){return d.x;})
+        .attr('y', function(d){return d.y;});
+</script>
+</body>
+</html>

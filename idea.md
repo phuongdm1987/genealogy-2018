@@ -1,0 +1,4 @@
+- create person component
+   - build tab for current node, wife, mother of current node
+- create person detail component
+   - build tab for detail, contact, biographic of current node tab

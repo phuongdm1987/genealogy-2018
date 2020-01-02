@@ -9,6 +9,7 @@ window.$ = window.jQuery = require('jquery');
 import * as d3 from "d3";
 import VeeValidate from 'vee-validate';
 import axios from 'axios';
+import store from './store';
 
 window.d3 = d3;
 require('./bootstrap');
@@ -27,6 +28,9 @@ window.Vue.use(VeeValidate);
  */
 
 Vue.component('tree-map', require('./components/tree/Tree.vue'));
+Vue.component('person', require('./components/person/Person.vue'));
+
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    store
 });
